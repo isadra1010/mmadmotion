@@ -1,0 +1,48 @@
+---
+const testimonials = [
+  "/testimonials/testimonial-1.png",
+  "/testimonials/testimonial-2.png",
+  "/testimonials/testimonial-3.png",
+];
+---
+
+<section class="section testimonials">
+  <div class="section-heading">
+    <p class="eyebrow">Testimonials</p>
+    <h2>What clients say about working with mmadmotion.</h2>
+  </div>
+
+  <div class="testimonial-grid">
+    {testimonials.map((image) => (
+      <article class="testimonial-card">
+        <img
+            src={image}
+            alt="Client testimonial"
+            loading="lazy"
+            class="testimonial-image"
+            data-full={image}
+        />
+      </article>
+    ))}
+  </div>
+</section>
+
+<div id="testimonial-modal" class="testimonial-modal">
+  <img id="modal-image" src="" alt="Testimonial" />
+</div>
+
+<script>
+  const modal = document.getElementById("testimonial-modal");
+  const modalImage = document.getElementById("modal-image");
+
+  document.querySelectorAll(".testimonial-image").forEach((image) => {
+    image.addEventListener("click", () => {
+      modalImage.src = image.dataset.full;
+      modal.classList.add("active");
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+</script>

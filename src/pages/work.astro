@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import WorkGrid from "../components/WorkGrid.astro";
+---
+
+<BaseLayout title="Work — MMAD Motion">
+  <Navbar />
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Work</p>
+      <h1>Selected YouTube editing projects.</h1>
+      <p class="hero-text">
+        A collection of sports, psychology, explainer, talking head, and short-form edits.
+      </p>
+    </section>
+
+    <WorkGrid />
+  </main>
+
+  <Footer />
+</BaseLayout>

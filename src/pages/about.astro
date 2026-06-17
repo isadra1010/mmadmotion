@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import AboutSection from "../components/AboutSection.astro";
+---
+
+<BaseLayout title="About — MMAD Motion">
+  <Navbar />
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">About</p>
+      <h1>Solo video editing agency for YouTube creators.</h1>
+      <p class="hero-text">
+        MMAD Motion helps creators and content teams turn raw footage into polished,
+        retention-focused videos.
+      </p>
+    </section>
+
+    <AboutSection />
+  </main>
+
+  <Footer />
+</BaseLayout>

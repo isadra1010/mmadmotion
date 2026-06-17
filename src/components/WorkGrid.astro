@@ -1,0 +1,56 @@
+---
+import { projects } from "../data/projects";
+---
+
+<section id="work" class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Selected Work</p>
+    <h2>Editing across multiple YouTube formats.</h2>
+  </div>
+
+  <div class="grid work-grid">
+    {projects.map((project) => {
+      const embedUrl = `https://www.youtube.com/embed/${project.videoId}`;
+
+      return (
+        <article class="card work-card">
+          <div class="project-video-card">
+            <iframe
+              src={embedUrl}
+              title={project.title}
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <p class="category">{project.category}</p>
+          <h3>{project.title}</h3>
+
+          <details class="work-detail">
+            <summary>View Detail</summary>
+
+            <div class="detail-content">
+              <p>{project.description}</p>
+
+              <div class="detail-meta">
+                <div>
+                  <span>Role</span>
+                  <strong>{project.role}</strong>
+                </div>
+
+                <div>
+                  <span>Format</span>
+                  <strong>{project.format}</strong>
+                </div>
+              </div>
+
+              <p class="focus-text">
+                <strong>Focus:</strong> {project.focus}
+              </p>
+            </div>
+          </details>
+        </article>
+      );
+    })}
+  </div>
+</section>
